@@ -1,0 +1,6 @@
+www.googletagmanager.com
+browser-intake-datadoghq.com
+www.googleadservices.com
+cdn.cookielaw.org
+stats.g.doubleclick.net
+www.google-analytics.com
