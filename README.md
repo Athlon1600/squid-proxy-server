@@ -1,3 +1,5 @@
+[![](http://www.squid-cache.org/Artwork/SubBanner.png)](http://www.squid-cache.org)
+
 # Squid Proxy Server
 
 Source code for:
