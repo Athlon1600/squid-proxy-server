@@ -8,6 +8,8 @@ NAME = squid
 
 build:
 	docker build -t $(NAME) .
+reload:
+	docker compose exec $(NAME) bash -c "squid -k reconfigure"
 run:
 	docker rm -f $(NAME) && docker run --name $(NAME) -p 5051:3128 squid
 run2:

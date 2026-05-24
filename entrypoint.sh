@@ -5,15 +5,24 @@ set -ex
 SQUID_USERNAME=${USERNAME:-proxynova}
 SQUID_PASSWORD=${PASSWORD:-password}
 
+CONFIG_LOCATION=/etc/squid/squid.conf
+
 ## generate default password file regardless
 htpasswd -cb /etc/squid/passwords "${SQUID_USERNAME}" "${SQUID_PASSWORD}"
 
-# sed expects unix line endings
-dos2unix /etc/squid/squid.conf
+# permission issues when trying to modify mounted config file
+if ! mountpoint -q "$CONFIG_LOCATION"; then
 
-## if no username or password provided - disable auth check
-if [[ -z "${USERNAME}" && -z "${PASSWORD}" ]]; then
-  sed -i 's/^http_access allow authenticated$/http_access allow all/' /etc/squid/squid.conf
+  # sed expects unix line endings
+  dos2unix /etc/squid/squid.conf
+
+  ## if no username or password provided - disable auth check
+  if [[ -z "${USERNAME}" && -z "${PASSWORD}" ]]; then
+    sed -i 's/^http_access allow authenticated$/http_access allow all/' /etc/squid/squid.conf
+  fi
+
+else
+  echo "$CONFIG_LOCATION detected as mount point. Skipping modifications..."
 fi
 
 ## start in no daemon mode with debug level 1 going to stderr

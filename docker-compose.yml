@@ -1,0 +1,10 @@
+services:
+  squid:
+    image: "athlon1600/squid-proxy-server:latest"
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ./etc/squid.conf:/etc/squid/squid.conf
+    ports:
+      - "3128:3128"
