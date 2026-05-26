@@ -1,5 +1,7 @@
 [![](http://www.squid-cache.org/Artwork/SubBanner.png)](http://www.squid-cache.org)
 
+[![.github/workflows/docker-build-push.yml](https://github.com/Athlon1600/squid-proxy-server/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/Athlon1600/squid-proxy-server/actions/workflows/docker-build-push.yml)
+
 # Squid Proxy Server
 
 Source code for:
