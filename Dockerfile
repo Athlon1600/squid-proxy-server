@@ -1,4 +1,5 @@
-FROM ubuntu:24.04
+FROM debian:stable-slim
+
 LABEL maintainer="Athlon1600"
 
 # Default shell
