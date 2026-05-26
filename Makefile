@@ -7,6 +7,8 @@ IMAGE_NAME = athlon1600/squid-proxy-server:latest
 
 .PHONY: build up down
 
+actions:
+	act -W .github/workflows/docker-build-push.yml workflow_dispatch --secret-file .env
 okay:
 	@echo "✅ All commands executed successfully!"
 build:
