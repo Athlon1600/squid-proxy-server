@@ -1,6 +1,6 @@
 DOCKER_BIN = docker
 NAME = squid
-IMAGE_NAME = athlon1600/squid-proxy-server3:latest
+IMAGE_NAME = athlon1600/squid-proxy-server:latest
 
 # Including any Makefile extensions and allow overriding the above variables
 -include $(wildcard Makefile.*)

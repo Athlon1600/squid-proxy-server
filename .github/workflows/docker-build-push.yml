@@ -21,14 +21,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: make build2
-
       - name: Test if proxy works
         run: |
+          make build2
           make run
           sleep 5
           make test
-
-      - name: Push Docker image
-        run: make push
